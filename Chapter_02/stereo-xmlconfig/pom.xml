@@ -3,13 +3,14 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>SpringinAction</artifactId>
-        <groupId>com.xzy</groupId>
+        <artifactId>Chapter_02</artifactId>
+        <groupId>groupId</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>Chapter_01</artifactId>
+    <artifactId>stereo-xmlconfig</artifactId>
+
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -20,6 +21,12 @@
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-all</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.github.stefanbirkner/system-rules -->
+        <dependency>
+            <groupId>com.github.stefanbirkner</groupId>
+            <artifactId>system-rules</artifactId>
             <scope>test</scope>
         </dependency>
 
