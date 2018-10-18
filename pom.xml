@@ -12,9 +12,11 @@
         <module>Chapter_01</module>
         <module>Chapter_02</module>
         <module>Chapter_03</module>
+        <module>Chapter_04</module>
     </modules>
 
     <properties>
+        <java.version>1.8</java.version>
         <org.springframework.version>4.3.18.RELEASE</org.springframework.version>
 
     </properties>
@@ -39,6 +41,16 @@
                 <artifactId>system-rules</artifactId>
                 <version>1.18.0</version>
                 <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjrt</artifactId>
+                <version>1.8.6</version>
+            </dependency>
+            <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjweaver</artifactId>
+                <version>1.8.6</version>
             </dependency>
 
             <!--spring 核心包-->
@@ -87,8 +99,23 @@
                 <artifactId>commons-logging</artifactId>
                 <version>1.2</version>
             </dependency>
-
         </dependencies>
     </dependencyManagement>
 
+    <build>
+        <plugins>
+            <!-- compiler插件, 设定JDK版本 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <showWarnings>true</showWarnings>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
