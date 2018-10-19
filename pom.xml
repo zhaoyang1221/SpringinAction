@@ -13,12 +13,12 @@
         <module>Chapter_02</module>
         <module>Chapter_03</module>
         <module>Chapter_04</module>
+        <module>Chapter_05</module>
     </modules>
 
     <properties>
         <java.version>1.8</java.version>
         <org.springframework.version>4.3.18.RELEASE</org.springframework.version>
-
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -42,15 +42,24 @@
                 <version>1.18.0</version>
                 <scope>test</scope>
             </dependency>
-            <dependency>
-                <groupId>org.aspectj</groupId>
-                <artifactId>aspectjrt</artifactId>
-                <version>1.8.6</version>
-            </dependency>
+
+            <!--aspectj-->
             <dependency>
                 <groupId>org.aspectj</groupId>
                 <artifactId>aspectjweaver</artifactId>
                 <version>1.8.6</version>
+            </dependency>
+
+            <!--spring-mvc-->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-web</artifactId>
+                <version>${org.springframework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-webmvc</artifactId>
+                <version>${org.springframework.version}</version>
             </dependency>
 
             <!--spring 核心包-->
@@ -98,6 +107,12 @@
                 <groupId>commons-logging</groupId>
                 <artifactId>commons-logging</artifactId>
                 <version>1.2</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>3.7</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
