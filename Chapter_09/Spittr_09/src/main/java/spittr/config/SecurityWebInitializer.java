@@ -4,7 +4,6 @@ import org.springframework.security.web.context.AbstractSecurityWebApplicationIn
 
 /**
  * <p>Title: SecurityWebInitializer</p>
- *
  * @description:
  * @author: xiongzy
  * @date: 2018-10-24
