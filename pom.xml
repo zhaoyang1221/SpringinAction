@@ -23,6 +23,7 @@
         <java.version>1.8</java.version>
         <org.springframework.version>4.3.18.RELEASE</org.springframework.version>
         <org.springframework.security.version>4.2.9.RELEASE</org.springframework.security.version>
+        <com.h2.database.versison>1.4.197</com.h2.database.versison>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -47,6 +48,14 @@
                 <scope>test</scope>
             </dependency>
 
+            <!--h2数据库-->
+            <dependency>
+                <groupId>com.h2database</groupId>
+                <artifactId>h2</artifactId>
+                <version>${com.h2.database.versison}</version>
+                <scope>test</scope>
+            </dependency>
+
             <!--aspectj-->
             <dependency>
                 <groupId>org.aspectj</groupId>
@@ -61,6 +70,13 @@
                 <version>4.0.1</version>
             </dependency>
 
+            <!-- https://mvnrepository.com/artifact/javax.validation/validation-api -->
+            <dependency>
+                <groupId>javax.validation</groupId>
+                <artifactId>validation-api</artifactId>
+                <version>2.0.1.Final</version>
+            </dependency>
+
             <!--thymeleaf-->
             <dependency>
                 <groupId>org.thymeleaf</groupId>
@@ -68,6 +84,12 @@
                 <version>3.0.10.RELEASE</version>
             </dependency>
 
+            <!--spring-jdbc-->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-jdbc</artifactId>
+                <version>${org.springframework.version}</version>
+            </dependency>
 
             <!--spring-mvc-->
             <dependency>
@@ -149,12 +171,6 @@
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
                 <version>3.7</version>
-            </dependency>
-            <!-- https://mvnrepository.com/artifact/javax.validation/validation-api -->
-            <dependency>
-                <groupId>javax.validation</groupId>
-                <artifactId>validation-api</artifactId>
-                <version>2.0.1.Final</version>
             </dependency>
 
         </dependencies>
