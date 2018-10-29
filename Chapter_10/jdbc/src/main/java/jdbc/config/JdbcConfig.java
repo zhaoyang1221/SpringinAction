@@ -1,10 +1,14 @@
-package config;
+package jdbc.config;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
-import org.springframework.jndi.JndiObjectFactoryBean;
+import org.springframework.transaction.PlatformTransactionManager;
 
 import javax.sql.DataSource;
 
@@ -16,6 +20,7 @@ import javax.sql.DataSource;
  * @date: 2018-10-25
  **/
 @Configuration
+@ComponentScan("jdbc")
 public class JdbcConfig {
 
     /**
@@ -35,12 +40,22 @@ public class JdbcConfig {
     //     jndiObjectFactoryBean.setProxyInterface(DataSource.class);
     //     return jndiObjectFactoryBean;
     // }
-
+    // @Profile("development")
     @Bean
-    public DataSource dataSource() {
+    public DataSource embeddedDataSource() {
         return new EmbeddedDatabaseBuilder()
                 .setType(EmbeddedDatabaseType.H2)
                 .addScripts("classpath:schema.sql", "classpath:test-data.sql")
                 .build();
+    }
+
+    @Bean
+    public JdbcTemplate jdbcTemplate(DataSource dataSource) {
+        return new JdbcTemplate(dataSource);
+    }
+
+    @Bean
+    public PlatformTransactionManager transactionManager(DataSource dataSource) {
+        return new DataSourceTransactionManager(dataSource);
     }
 }
