@@ -18,6 +18,7 @@
         <module>Chapter_09</module>
         <module>Chapter_10</module>
         <module>Chapter_11</module>
+        <module>Chapter_12</module>
     </modules>
 
     <properties>
@@ -113,6 +114,19 @@
                 <artifactId>javax.inject</artifactId>
                 <version>1</version>
             </dependency>
+            <dependency>
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-mongodb</artifactId>
+                <version>2.1.1.RELEASE</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mongodb</groupId>
+                <artifactId>mongo-java-driver</artifactId>
+                <version>3.8.2</version>
+            </dependency>
+
+
+
 
 
             <!--spring-mvc-->
