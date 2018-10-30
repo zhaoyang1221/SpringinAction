@@ -17,11 +17,12 @@
         <module>Chapter_07</module>
         <module>Chapter_09</module>
         <module>Chapter_10</module>
+        <module>Chapter_11</module>
     </modules>
 
     <properties>
         <java.version>1.8</java.version>
-        <org.springframework.version>4.3.18.RELEASE</org.springframework.version>
+        <org.springframework.version>4.3.20.RELEASE</org.springframework.version>
         <org.springframework.security.version>4.2.9.RELEASE</org.springframework.security.version>
         <com.h2.database.versison>1.4.197</com.h2.database.versison>
     </properties>
@@ -90,6 +91,29 @@
                 <artifactId>spring-jdbc</artifactId>
                 <version>${org.springframework.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-jpa</artifactId>
+                <version>1.11.16.RELEASE</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.springframework/spring-orm -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-orm</artifactId>
+                <version>${org.springframework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-entitymanager</artifactId>
+                <version>4.3.11.Final</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.inject</groupId>
+                <artifactId>javax.inject</artifactId>
+                <version>1</version>
+            </dependency>
+
 
             <!--spring-mvc-->
             <dependency>
