@@ -19,6 +19,7 @@
         <module>Chapter_10</module>
         <module>Chapter_11</module>
         <module>Chapter_12</module>
+        <module>Chapter_13</module>
     </modules>
 
     <properties>
@@ -117,12 +118,25 @@
             <dependency>
                 <groupId>org.springframework.data</groupId>
                 <artifactId>spring-data-mongodb</artifactId>
-                <version>2.1.1.RELEASE</version>
+                <version>1.10.16.RELEASE</version>
             </dependency>
             <dependency>
                 <groupId>org.mongodb</groupId>
                 <artifactId>mongo-java-driver</artifactId>
                 <version>3.8.2</version>
+            </dependency>
+
+            <!--缓存-->
+            <dependency>
+                <groupId>net.sf.ehcache</groupId>
+                <artifactId>ehcache</artifactId>
+                <version>2.10.6</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.ehcache/jcache -->
+            <dependency>
+                <groupId>org.ehcache</groupId>
+                <artifactId>jcache</artifactId>
+                <version>1.0.1</version>
             </dependency>
 
 
